@@ -1,4 +1,4 @@
-KUBE_VM ?= docker
+KUBE_VM ?= virtualbox
 KUBE_CPU ?= 2
 KUBE_MEM ?= 8192
 KUBE_VER ?= v1.23.0
