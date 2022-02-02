@@ -63,7 +63,7 @@ spec:
             path: "/health"
 ---
 {{- if .create_ingress }}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tuf-reposerver
@@ -73,10 +73,13 @@ spec:
   rules:
   - host: tuf-reposerver.{{ .ingress_dns_name }}
     http:
-      paths:
+      paths:  
       - backend:
-          serviceName: tuf-reposerver
-          servicePort: 80
+          service:
+            name: tuf-reposerver
+            port: 
+              number: 80
+        pathType: ImplementationSpecific 
 ---
 {{- end }}
 apiVersion: v1

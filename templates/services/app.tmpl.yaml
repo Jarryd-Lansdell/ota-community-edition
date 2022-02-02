@@ -91,7 +91,7 @@ spec:
             path: "/health"
 ---
 {{- if .create_ingress }}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app
@@ -105,8 +105,11 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: app
-          servicePort: 80
+          service:
+            name: app
+            port: 
+              number: 80
+        pathType: ImplementationSpecific 
 ---
 {{- end }}
 apiVersion: v1

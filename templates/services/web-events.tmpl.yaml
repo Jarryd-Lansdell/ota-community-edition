@@ -55,7 +55,7 @@ spec:
             memory: {{ .web_events_mem }}
 ---
 {{- if .create_ingress }}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-events
@@ -68,10 +68,13 @@ spec:
   rules:
   - host: web-events.{{ .ingress_dns_name }}
     http:
-      paths:
+      paths: 
       - backend:
-          serviceName: web-events
-          servicePort: 80
+          service:
+            name: web-events
+            port: 
+              number: 80
+        pathType: ImplementationSpecific 
 ---
 {{- end }}
 apiVersion: v1
