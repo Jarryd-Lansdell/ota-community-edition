@@ -1,7 +1,7 @@
 KUBE_VM ?= virtualbox
 KUBE_CPU ?= 2
 KUBE_MEM ?= 8192
-KUBE_VER ?= v1.23.0
+KUBE_VER ?= v1.20.0
 
 .PHONY: help start clean new-client new-server start-all start-ingress \
   start-infra start-services print-hosts
