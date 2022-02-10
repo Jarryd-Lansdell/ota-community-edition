@@ -11,7 +11,8 @@ zookeeper_docker_image: gcr.io/google_samples/k8szk:v2
 
 # service images
 #app_docker_image: advancedtelematic/ota-plus-web:f5d02d1a7cc284397e07b1b79104cbeccac78078
-app_docker_image: advancedtelematic/ota-plus-web:a791c2c6b91e6aee51aef18652e0110c580fe58c-angel-delight
+#app_docker_image: uptane/ota-plus-web:06053862900a6be6e9b54fe4529e4d1070c98711
+app_docker_image: simaom/ota-plus-web:fbeb80223434b91e05ee18b5dfed38af616adce9
 bootstrap_docker_image: advancedtelematic/bootstrap_ota_kube:2.1
 campaigner_docker_image: advancedtelematic/campaigner:ebc1f5771021ef40fff63f966178da34a5d7ecd9
 campaigner_daemon_docker_image: advancedtelematic/campaigner:ebc1f5771021ef40fff63f966178da34a5d7ecd9
